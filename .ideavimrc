@@ -1,41 +1,44 @@
-" .ideavimrc is a configuration file for IdeaVim plugin. It uses
-"   the same commands as the original .vimrc configuration.
-" You can find a list of commands here: https://jb.gg/h38q75
-" Find more examples here: https://jb.gg/share-ideavimrc
-
-
-"" -- Suggested options --
-" Show a few lines of context around the cursor. Note that this makes the
-" text scroll if you mouse-click near the start or end of the window.
-set scrolloff=5
+" --Vim Specific
+set autoindent
+set clipboard=unnamedplus
+set hlsearch
+set incsearch
+set mouse=a
 set number
 set relativenumber
-set autoindent
-set mouse=a
 set ruler
-set hlsearch
-set clipboard=unnamedplus
-" set cursorline
-" Do incremental searching.
-set incsearch
+set scrolloff=5
+"set cursorline
+
+" --IdeaVim Specific
 set sneak
-"set surround
-set commentary
 set quickscope
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 set which-key
-set notimeout
+set timeoutlen=1000
+"set commentary
 
-" Don't use Ex mode, use Q for formatting.
+" --move
+nnoremap K :m .-2<CR>==
+nnoremap J :m .+1<CR>==
+vnoremap K :m '<-2<CR>gv=gv
+vnoremap J :m '>+1<CR>gv=gv
+
+" --leader
 let mapleader = " "
+
+" --basics
 inoremap ;; <Esc>
-"nmap <leader><leader> :action AceAction<CR>
-nmap <leader>c :action GotoClass<CR>
-nmap <leader>s :action FileStructurePopup<CR>
-nmap <leader>d :action GotoDeclaration<CR>
-nmap <leader>i :action GotoImplementation<CR>
-nmap <leader>e :action RecentFiles<CR>
-nmap <leader>t :action ActivateTerminalToolWindow<CR>
+nnoremap <CR> o<Esc>
+nnoremap <leader><CR> O<Esc>
+
+" --Intellij Actions
+nnoremap <leader>c :action GotoClass<CR>
+nnoremap <leader>s :action FileStructurePopup<CR>
+nnoremap <leader>d :action GotoDeclaration<CR>
+nnoremap <leader>i :action GotoImplementation<CR>
+nnoremap <leader>e :action RecentFiles<CR>
+nnoremap <leader>t :action ActivateTerminalToolWindow<CR>
 nnoremap <Leader>f :action ShowNavBar<CR>
 nnoremap <Leader>z :action ToggleZenMode<CR>
 nnoremap <Leader>p :action TogglePresentationMode<CR>
@@ -47,23 +50,14 @@ nmap <leader>st :action Stop<CR>
 nmap <leader>q :action QuickImplementations<CR>
 map \r <Action>(ReformatCode)
 nmap <leader>nf :action NewScratchFile<CR>
-nmap <leader> :action ShowHoverInfo<CR>
+"nmap <leader> :action ShowHoverInfo<CR>
+nmap <leader><leader> :action AceAction<CR>
 
-" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
-
-" Highlight copied text
-Plug 'machakann/vim-highlightedyank'
-" Commentary plugin         
-Plug 'tpope/vim-commentary'
+" --Plugins
 Plug 'justinmk/vim-sneak'
-Plug 'vim-surround'
 
-"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
-"" Map \r to the Reformat Code action
+" Map \r to the Reformat Code action
 "map \r <Action>(ReformatCode)
 
-"" Map <leader>d to start debug
+" Map <leader>d to start debug
 "map <leader>d <Action>(Debug)
-
-"" Map \b to toggle the breakpoint on the current line
-"map \b <Action>(ToggleLineBreakpoint)
