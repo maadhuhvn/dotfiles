@@ -18,11 +18,18 @@ set clipboard=unnamedplus
 " set cursorline
 " Do incremental searching.
 set incsearch
+set sneak
+"set surround
+set commentary
+set quickscope
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+set which-key
+set notimeout
 
 " Don't use Ex mode, use Q for formatting.
-inoremap jj <Esc>
 let mapleader = " "
-map Q gq
+inoremap ;; <Esc>
+"nmap <leader><leader> :action AceAction<CR>
 nmap <leader>c :action GotoClass<CR>
 nmap <leader>s :action FileStructurePopup<CR>
 nmap <leader>d :action GotoDeclaration<CR>
@@ -30,19 +37,26 @@ nmap <leader>i :action GotoImplementation<CR>
 nmap <leader>e :action RecentFiles<CR>
 nmap <leader>t :action ActivateTerminalToolWindow<CR>
 nnoremap <Leader>f :action ShowNavBar<CR>
-nnoremap <Leader>v :action Vcs.QuickListPopupAction<CR>
-nnoremap <Leader>b :action Vcs.ShowBranches<CR>
 nnoremap <Leader>z :action ToggleZenMode<CR>
 nnoremap <Leader>p :action TogglePresentationMode<CR>
-nnoremap <leader>h :action HideAllWindows<CR>
+nnoremap gh :action HideAllWindows<CR>
+nmap <leader>g :action ShowErrorDescription<CR>
+nmap <leader>r :action Run<CR>
+nmap <leader>db :action Debug<CR>
+nmap <leader>st :action Stop<CR>
+nmap <leader>q :action QuickImplementations<CR>
+map \r <Action>(ReformatCode)
+nmap <leader>nf :action NewScratchFile<CR>
+nmap <leader> :action ShowHoverInfo<CR>
 
 " --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
 
 " Highlight copied text
 Plug 'machakann/vim-highlightedyank'
-" Commentary plugin
+" Commentary plugin         
 Plug 'tpope/vim-commentary'
-
+Plug 'justinmk/vim-sneak'
+Plug 'vim-surround'
 
 "" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
 "" Map \r to the Reformat Code action
