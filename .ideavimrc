@@ -1,1 +1,40 @@
-/home/mady/.ideavimrc
+source ~/.vimrc
+
+" --IdeaVim Specific
+set sneak
+set quickscope
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+set which-key
+set timeoutlen=1000
+"set commentary
+
+" --Intellij Actions
+nnoremap <leader>c :action GotoClass<CR>
+nnoremap <leader>s :action FileStructurePopup<CR>
+nnoremap <leader>d :action GotoDeclaration<CR>
+nnoremap <leader>i :action GotoImplementation<CR>
+nnoremap <leader>e :action RecentFiles<CR>
+nnoremap <leader>t :action ActivateTerminalToolWindow<CR>
+nnoremap <Leader>f :action ShowNavBar<CR>
+nnoremap <Leader>z :action ToggleZenMode<CR>
+nnoremap <Leader>p :action TogglePresentationMode<CR>
+nnoremap gh :action HideAllWindows<CR>
+nmap <leader>g :action ShowErrorDescription<CR>
+nmap <leader>r :action Run<CR>
+nmap <leader>db :action Debug<CR>
+nmap <leader>st :action Stop<CR>
+nmap <leader>q :action QuickImplementations<CR>
+map \r <Action>(ReformatCode)
+nmap <leader>nf :action NewScratchFile<CR>
+"nmap <leader> :action ShowHoverInfo<CR>
+nmap <leader><leader> :action AceAction<CR>
+
+" --Plugins
+Plug 'justinmk/vim-sneak'
+
+" Map \r to the Reformat Code action
+"map \r <Action>(ReformatCode)
+
+" Map <leader>d to start debug
+"map <leader>d <Action>(Debug)
+
