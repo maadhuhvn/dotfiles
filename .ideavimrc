@@ -4,37 +4,67 @@ source ~/.vimrc
 set sneak
 set quickscope
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-set which-key
-set timeoutlen=1000
+"set which-key
+" set timeoutlen=1000
 "set commentary
 
+" --Edit this file
+nnoremap \e :e ~/.ideavimrc<CR>
+nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
+nnoremap \v :action VimActions<CR>
+
 " --Intellij Actions
-nnoremap <leader>c :action GotoClass<CR>
-nnoremap <leader>s :action FileStructurePopup<CR>
-nnoremap <leader>d :action GotoDeclaration<CR>
-nnoremap <leader>i :action GotoImplementation<CR>
-nnoremap <leader>e :action RecentFiles<CR>
-nnoremap <leader>t :action ActivateTerminalToolWindow<CR>
-nnoremap <Leader>f :action ShowNavBar<CR>
-nnoremap <Leader>z :action ToggleZenMode<CR>
-nnoremap <Leader>p :action TogglePresentationMode<CR>
+nnoremap <leader>b :action Back<CR>
+nnoremap <leader>f :action Forward<CR>
+nnoremap ge :action GotoNextError<CR>
+nnoremap gE :action GotoPreviousError<CR>
 nnoremap gh :action HideAllWindows<CR>
-nmap <leader>g :action ShowErrorDescription<CR>
-nmap <leader>r :action Run<CR>
-nmap <leader>db :action Debug<CR>
-nmap <leader>st :action Stop<CR>
-nmap <leader>q :action QuickImplementations<CR>
-map \r <Action>(ReformatCode)
-nmap <leader>nf :action NewScratchFile<CR>
-"nmap <leader> :action ShowHoverInfo<CR>
-nmap <leader><leader> :action AceAction<CR>
+
+nnoremap <C-k> :action MethodUp<CR>
+nnoremap <C-j> :action MethodDown<CR>
+nnoremap <C-l> :action NextTab<CR>
+nnoremap <C-h> :action PreviousTab<CR>
+
+map <CR> o<Esc>:action ReformatCode<CR>
+
+nnoremap <leader><leader> :action AceAction<CR>
+nnoremap <Leader>p :action TogglePresentationMode<CR>
+nnoremap <leader>q :action QuickImplementations<CR>
+nnoremap <leader>x :action CloseContent<CR>
+nnoremap <leader>z :action ToggleZenMode<CR>
+nnoremap <leader>N :action NewScratchFile<CR>
+
+nnoremap <leader>ch :action CallHierarchy<CR>
+nnoremap <leader>db :action Debug<CR>
+nnoremap <leader>fs :action FileStructurePopup<CR>
+nnoremap <leader>gc :action GotoClass<CR>
+nnoremap <leader>gd :action GotoDeclaration<CR>
+nnoremap <leader>gi :action GotoImplementation<CR>
+nnoremap <leader>mh :action MethodHierarchy<CR>
+nnoremap <leader>ns :action NextSplitter<CR>
+nnoremap <leader>re :action RenameElement<CR>
+nnoremap <leader>rf :action RecentFiles<CR>
+nnoremap <leader>rn :action Run<CR>
+nnoremap <leader>rr :action ReRun<CR>
+nnoremap <leader>se :action ShowErrorDescription<CR>
+nnoremap <leader>sf :action ShowFilePath<CR>
+nnoremap <leader>si :Action SelectIn<CR>
+nnoremap <Leader>sn :action ShowNavBar<CR>
+nnoremap <leader>sp :action Stop<CR>
+nnoremap <leader>th :action TypeHierarchy<CR>
+nnoremap <leader>tt :action ActivateTerminalToolWindow<CR>
+nnoremap <leader>us :action Unsplit<CR>
+nnoremap <leader>vs :action SplitVertically<CR>
+nnoremap <leader>yp :action CopyAbsolutePath
+
+nnoremap ,r :action ContextRun<CR>
+nnoremap ,c :action RunClass<CR>
+nnoremap ,f :action ChooseRunConfiguration<CR>
+nnoremap ,t :action ActivateRunToolWindow<CR>
+nnoremap ,u :action Rerun<CR>
+nnoremap ,s :action ShowPopupMenu<CR>
+nnoremap ,h :action ShowHoverInfo<CR>
+
 
 " --Plugins
 Plug 'justinmk/vim-sneak'
-
-" Map \r to the Reformat Code action
-"map \r <Action>(ReformatCode)
-
-" Map <leader>d to start debug
-"map <leader>d <Action>(Debug)
-

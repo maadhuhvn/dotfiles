@@ -24,6 +24,7 @@ let mapleader=" "
 inoremap ;; <Esc>
 nnoremap <CR> o<Esc>
 nnoremap <leader><CR> O<Esc>
+nnoremap U <C-R>
 
 " --Vim Specific
 nnoremap <leader>wq :wq<CR>
