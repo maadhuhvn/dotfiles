@@ -64,7 +64,9 @@ nnoremap ,t :action ActivateRunToolWindow<CR>
 nnoremap ,u :action Rerun<CR>
 nnoremap ,s :action ShowPopupMenu<CR>
 nnoremap ,h :action ShowHoverInfo<CR>
-
+nnoremap ,p :action ActivateProjectToolWindow<CR>
+nnoremap ,n :action NewElement<CR>
+nnoremap ,d :action $Delete<CR>
 
 " --Plugins
 Plug 'justinmk/vim-sneak'
