@@ -14,8 +14,6 @@ nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
 nnoremap \v :action VimActions<CR>
 
 " --Intellij Actions
-nnoremap <leader>b :action Back<CR>
-nnoremap <leader>f :action Forward<CR>
 nnoremap ge :action GotoNextError<CR>
 nnoremap gE :action GotoPreviousError<CR>
 nnoremap gh :action HideAllWindows<CR>
@@ -28,7 +26,9 @@ nnoremap <C-h> :action PreviousTab<CR>
 map <CR> o<Esc>:action ReformatCode<CR>
 
 nnoremap <leader><leader> :action AceAction<CR>
-nnoremap <Leader>p :action TogglePresentationMode<CR>
+nnoremap <leader>b :action Back<CR>
+nnoremap <leader>o :action Forward<CR>
+nnoremap <leader>p :action TogglePresentationMode<CR>
 nnoremap <leader>q :action QuickImplementations<CR>
 nnoremap <leader>x :action CloseContent<CR>
 nnoremap <leader>z :action ToggleZenMode<CR>
@@ -48,7 +48,7 @@ nnoremap <leader>rn :action Run<CR>
 nnoremap <leader>rr :action ReRun<CR>
 nnoremap <leader>se :action ShowErrorDescription<CR>
 nnoremap <leader>sf :action ShowFilePath<CR>
-nnoremap <leader>si :Action SelectIn<CR>
+nnoremap <leader>si :action SelectIn<CR>
 nnoremap <Leader>sn :action ShowNavBar<CR>
 nnoremap <leader>sp :action Stop<CR>
 nnoremap <leader>th :action TypeHierarchy<CR>
@@ -67,6 +67,11 @@ nnoremap ,h :action ShowHoverInfo<CR>
 nnoremap ,p :action ActivateProjectToolWindow<CR>
 nnoremap ,n :action NewElement<CR>
 nnoremap ,d :action $Delete<CR>
+nnoremap ,a :action ResizeToolWindowUp<CR>
+nnoremap <leader>k :action ResizeToolWindowUp<CR>
+nnoremap <leader>j :action ResizeToolWindowDown<CR>
+"nnoremap <leader>l :action ResizeToolWindowRight<CR>
+"nnoremap <leader>h :action ResizeToolWindowLeft<CR>
 
 " --Plugins
 Plug 'justinmk/vim-sneak'
