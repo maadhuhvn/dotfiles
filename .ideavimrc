@@ -57,8 +57,8 @@ nnoremap <leader>us :action Unsplit<CR>
 nnoremap <leader>vs :action SplitVertically<CR>
 nnoremap <leader>yp :action CopyAbsolutePath
 
-nnoremap ,r :action ContextRun<CR>
-nnoremap ,c :action RunClass<CR>
+nnoremap ,c :action ContextRun<CR>
+nnoremap ,r :action RunClass<CR>
 nnoremap ,f :action ChooseRunConfiguration<CR>
 nnoremap ,t :action ActivateRunToolWindow<CR>
 nnoremap ,u :action Rerun<CR>
