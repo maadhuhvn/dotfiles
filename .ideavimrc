@@ -8,6 +8,7 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 "set NERDTree
 set which-key
 set notimeout
+"set easymotion
 "set timeoutlen=1000
 "set commentary
 
@@ -32,8 +33,9 @@ nnoremap <C-l> :action NextTab<CR>
 nnoremap <C-h> :action PreviousTab<CR>
 
 map <CR> o<Esc>:action ReformatCode<CR>
+map <Esc> <Esc>:action SaveAll<CR>
 
-nnoremap <leader><leader> :action AceAction<CR>
+"nnoremap <leader><leader> :action AceAction<CR>
 nnoremap <leader>a :action ShowIntentionActions<CR>
 nnoremap <leader>b :action Back<CR>
 nnoremap <leader>o :action Forward<CR>
@@ -44,6 +46,7 @@ nnoremap <leader>z :action ToggleZenMode<CR>
 nnoremap <leader>N :action NewScratchFile<CR>
 
 nnoremap <leader>ch :action CallHierarchy<CR>
+nnoremap <leader>ct :action JS.TypeScript.Compile<CR>
 nnoremap <leader>db :action Debug<CR>
 nnoremap <leader>fs :action FileStructurePopup<CR>
 nnoremap <leader>fu :action FindUsages<CR>
@@ -51,29 +54,31 @@ nnoremap <leader>gc :action GotoClass<CR>
 nnoremap <leader>gd :action GotoDeclaration<CR>
 nnoremap <leader>gi :action GotoImplementation<CR>
 nnoremap <leader>mh :action MethodHierarchy<CR>
-nnoremap <leader>nf :action NewFile<CR>
-nnoremap <leader>ns :action NextSplitter<CR>
 nnoremap <leader>re :action RenameElement<CR>
 nnoremap <leader>rf :action RecentFiles<CR>
 nnoremap <leader>rn :action Run<CR>
+nnoremap <leader>rp :action $LRU<CR>
 nnoremap <leader>rr :action ReRun<CR>
 nnoremap <leader>se :action ShowErrorDescription<CR>
+nnoremap <leader>ss :action ShowSettings<CR>
 nnoremap <leader>sf :action ShowFilePath<CR>
 nnoremap <leader>si :action SelectIn<CR>
 nnoremap <Leader>sn :action ShowNavBar<CR>
 nnoremap <leader>sp :action Stop<CR>
+nnoremap <leader>sm :action MoveTabRight<CR>
+nnoremap <leader>sv :action SplitVertically<CR>
+nnoremap <leader>sh :action SplitHorizontally<CR>
+nnoremap <leader>sj :action NextSplitter<CR>
+nnoremap <leader>su :action Unsplit<CR>
 nnoremap <leader>th :action TypeHierarchy<CR>
 nnoremap <leader>tt :action ActivateTerminalToolWindow<CR>
-nnoremap <leader>us :action Unsplit<CR>
-nnoremap <leader>vs :action SplitVertically<CR>
-nnoremap <leader>vs :action SplitVertically<CR>
-nnoremap <leader>vs :action SplitVertically<CR>
-nnoremap <leader>vs :action SplitVertically<CR>
-nnoremap <leader>vs :action SplitVertically<CR>
-nnoremap <leader>vs :action SplitVertically<CR>
+nnoremap <leader>vs :action ViewStatusBar<CR>
+nnoremap <leader>vt :action ViewToolBar<CR>
 nnoremap <leader>yp :action CopyAbsolutePath
 
 nnoremap ,c :action ContextRun<CR>
+nnoremap ,d :action ActivateDatabaseToolWindow<CR>
+nnoremap ,e :action Console.Jdbc.Execute<CR>
 nnoremap ,r :action RunClass<CR>
 nnoremap ,f :action ChooseRunConfiguration<CR>
 nnoremap ,t :action ActivateRunToolWindow<CR>
@@ -82,7 +87,9 @@ nnoremap ,s :action ShowPopupMenu<CR>
 nnoremap ,h :action ShowHoverInfo<CR>
 nnoremap ,p :action ActivateProjectToolWindow<CR>
 nnoremap ,n :action NewElement<CR>
-nnoremap ,d :action $Delete<CR>
+nnoremap ,v :action SelectInProjectView<CR>
+nnoremap ,w :action FrameSwitchAction<CR>
+"nnoremap ,d :action $Delete<CR>
 nnoremap ,a :action ResizeToolWindowUp<CR>
 nnoremap <leader>k :action ResizeToolWindowUp<CR>
 nnoremap <leader>j :action ResizeToolWindowDown<CR>
@@ -97,4 +104,3 @@ Plug 'justinmk/vim-sneak'
 "Plug 'easymotion/vim-easymotion'
 "map <leader>J <Plug>(easymotion-s)
 "map <leader>j <Plug>(easymotion-f)
-:action EditorUp
