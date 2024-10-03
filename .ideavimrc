@@ -1,23 +1,29 @@
 source ~/.vimrc
-set scrolloff=8
+set scrolloff=10
 
 " --IdeaVim Specific
 set sneak
 set quickscope
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-"set NERDTree
+"set NERDTree //configured in .vimrc
 set which-key
 set notimeout
 "set easymotion
 "set timeoutlen=1000
 "set commentary
+set ignorecase
+set smartcase
+set highlightedyank
 
-" --My prepend keys are (\), (g), (leader), (,), (Ctrl)
+" --My prepend keys are (\), (,), (leader), (g), (Ctrl)
 
 " --Edit this file
 nnoremap \e :e ~/.ideavimrc<CR>
 nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
 nnoremap \v :action VimActions<CR>
+nnoremap \s :action Switcher<CR>
+nnoremap \c :action CollapseDocComments<CR>
+nnoremap \x :action ExpandDocComments<CR>
 
 " --Intellij Actions
 nnoremap ge :action GotoNextError<CR>
@@ -66,16 +72,17 @@ nnoremap <leader>sf :action ShowFilePath<CR>
 nnoremap <leader>si :action SelectIn<CR>
 nnoremap <Leader>sn :action ShowNavBar<CR>
 nnoremap <leader>sp :action Stop<CR>
-nnoremap <leader>sm :action MoveTabRight<CR>
-nnoremap <leader>sv :action SplitVertically<CR>
-nnoremap <leader>sh :action SplitHorizontally<CR>
+nnoremap <leader>sv :action MoveTabRight<CR>
+nnoremap <leader>sh :action MoveTabDown<CR>
 nnoremap <leader>sj :action NextSplitter<CR>
 nnoremap <leader>su :action Unsplit<CR>
 nnoremap <leader>th :action TypeHierarchy<CR>
 nnoremap <leader>tt :action ActivateTerminalToolWindow<CR>
+nnoremap <leader>va :action ViewStatusBar<CR>:action ViewToolBar<CR>:action ViewToolButtons<CR>
 nnoremap <leader>vs :action ViewStatusBar<CR>
 nnoremap <leader>vt :action ViewToolBar<CR>
-nnoremap <leader>yp :action CopyAbsolutePath
+nnoremap <leader>vb :action ViewToolButtons<CR>
+nnoremap <leader>yp :action CopyAbsolutePath<CR>
 
 nnoremap ,c :action ContextRun<CR>
 nnoremap ,d :action ActivateDatabaseToolWindow<CR>
@@ -85,14 +92,14 @@ nnoremap ,f :action ChooseRunConfiguration<CR>
 nnoremap ,t :action ActivateRunToolWindow<CR>
 nnoremap ,u :action Rerun<CR>
 nnoremap ,s :action ShowPopupMenu<CR>
-nnoremap ,h :action ShowHoverInfo<CR>
+nnoremap ,a :action ShowHoverInfo<CR>
 nnoremap ,p :action ActivateProjectToolWindow<CR>
 nnoremap ,q :action QuickJavaDoc<CR>
 nnoremap ,n :action NewElement<CR>
 nnoremap ,v :action SelectInProjectView<CR>
 nnoremap ,w :action FrameSwitchAction<CR>
 "nnoremap ,d :action $Delete<CR>
-nnoremap ,a :action ResizeToolWindowUp<CR>
+"nnoremap ,a :action ResizeToolWindowUp<CR>
 nnoremap <leader>k :action ResizeToolWindowUp<CR>
 nnoremap <leader>j :action ResizeToolWindowDown<CR>
 "nnoremap <leader>l :action ResizeToolWindowRight<CR>
