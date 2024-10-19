@@ -55,6 +55,7 @@ nnoremap <leader>N :action NewScratchFile<CR>
 nnoremap <leader>ch :action CallHierarchy<CR>
 nnoremap <leader>ct :action JS.TypeScript.Compile<CR>
 nnoremap <leader>db :action Debug<CR>
+nnoremap <leader>df :action ToggleDistractionFreeMode<CR>
 nnoremap <leader>fs :action FileStructurePopup<CR>
 nnoremap <leader>fu :action FindUsages<CR>
 nnoremap <leader>gc :action GotoClass<CR>
