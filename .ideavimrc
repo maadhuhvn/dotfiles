@@ -33,6 +33,7 @@ nnoremap g> :action MoveElementRight<CR>
 nnoremap g< :action MoveElementLeft<CR>
 
 sethandler <C-k> n-v:vim i:ide
+sethandler <C-e> n-v:vim i:ide
 nnoremap <C-k> :action MethodUp<CR>
 nnoremap <C-j> :action MethodDown<CR>
 nnoremap <C-l> :action NextTab<CR>
@@ -107,7 +108,7 @@ nnoremap <leader>j :action ResizeToolWindowDown<CR>
 "nnoremap <leader>h :action ResizeToolWindowLeft<CR>
 
 " --Plugins
-Plug 'justinmk/vim-sneak'
+Plug 'justinmk/vim-sneakk
 "Plug 'tommcdo/vim-exchange'
 "Plug 'tpope/vim-surround'
 "Plug 'machakann/vim-swap'
